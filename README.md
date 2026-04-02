@@ -65,13 +65,11 @@ Sometimes multiple tools are used in one query.
 ## How to Run
 
 ### Step 1: Install libraries
-
-```bash
 pip install -U langchain langchain-community langchain-google-genai faiss-cpu pandas ddgs
 
-**### Step 2: Add your API key**
+### Step 2: Add your API key
 import os
 os.environ["GOOGLE_API_KEY"] = "your_api_key_here"
 
-**### Step 3: Run the code**
+### Step 3: Run the code
 python Code.py
