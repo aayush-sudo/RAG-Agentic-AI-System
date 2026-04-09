@@ -19,14 +19,14 @@ from langchain_core.prompts import ChatPromptTemplate
 
 
 # Gemini API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAAKdt1vjwfiVQ93V3lvqEw80TLJ0brrBY"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyBPTjCNNRV4EDqkegkxUWarWeMUO1A5GDU"
 
 
 # We have Implemented 4 TOOLS :
-# 1. 
-#
-#
-#
+# 1. RAG
+# 2. Web Search
+# 3. Calculator
+# 4. Current Time
 
 
 # Tool 1: RAG Knowledge Base
@@ -53,7 +53,7 @@ college_data = [
 "KJSSE emphasizes practical and industry-oriented learning through internships, live projects, hackathons, and research initiatives."
 ]
 
-#vector store and retriever tool
+# Vector Store and Retriever Tool
 vectorstore = FAISS.from_texts(college_data, embeddings)
 retriever = vectorstore.as_retriever()
 
@@ -61,7 +61,7 @@ retriever = vectorstore.as_retriever()
 rag_tool = create_retriever_tool(
     retriever,
     "college_knowledge_base",
-    "Searches internal college documents. Use this to find information about the College."
+    "Use this tool to answer questions specifically about KJSSE college, courses, campus, placements, or facilities."
 )
 
 # Tool 2: Web Search using DuckDuckGo(Free)
